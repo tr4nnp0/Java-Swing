@@ -200,8 +200,8 @@ public class Autor {
 				// Define a conex�o
 				conexao = Conexao.conectaBanco();
 				// Define a consulta
-				//String sql = "update conta set titular=?, saldo=? where agencia=? and numero=?";
-				String sql = "delete from livro where matricula=? and nome=? and nacionalidade=? and CPF=?";
+				//String sql = "update autorlivro set titular=?, saldo=? where agencia=? and numero=?";
+				String sql = "delete from autorlivro where matricula=? and nome=? and nacionalidade=? and CPF=?";
 				// Prepara a consulta
 				PreparedStatement ps = conexao.prepareStatement(sql);
 				// Define os par�metros da atualiza��o
