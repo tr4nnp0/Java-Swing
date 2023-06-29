@@ -197,7 +197,6 @@ public class Livro {
 				// Define a conex�o
 				conexao = Conexao.conectaBanco();
 				// Define a consulta
-				//String sql = "update conta set titular=?, saldo=? where agencia=? and numero=?";
 				String sql = "delete from livro where codigo=? and titulo=? and anoLancamento=? and preco=?";
 				// Prepara a consulta
 				PreparedStatement ps = conexao.prepareStatement(sql);
