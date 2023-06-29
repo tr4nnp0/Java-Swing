@@ -203,7 +203,6 @@ public class AutorLivro {
 				// Define a conex�o
 				conexao = Conexao.conectaBanco();
 				// Define a consulta
-				//String sql = "update conta set titular=?, saldo=? where agencia=? and numero=?";
 				String sql = "delete from autorlivro where codautor=? and codlivro=? and codeditora=? and editora=?";
 				// Prepara a consulta
 				PreparedStatement ps = conexao.prepareStatement(sql);
