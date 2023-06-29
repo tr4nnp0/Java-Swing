@@ -197,6 +197,7 @@ public class Livro {
 				// Define a conex�o
 				conexao = Conexao.conectaBanco();
 				// Define a consulta
+				//String sql = "update conta set titular=?, saldo=? where agencia=? and numero=?";
 				String sql = "delete from livro where codigo=? and titulo=? and anoLancamento=? and preco=?";
 				// Prepara a consulta
 				PreparedStatement ps = conexao.prepareStatement(sql);
@@ -204,7 +205,7 @@ public class Livro {
 				ps.setInt(1, numCodigo); // Substitui o primeiro par�metro da consulta pelo codigo informado
 				ps.setString(2, titulo); // Substitui o segundo par�metro da consulta pelo titulo informado
 				ps.setInt(3, anoLancamento); // Substitui o terceiro par�metro da consulta pelo ano de lançamento informado
-				ps.setInt(4, valorPreco); // Substitui o quarto par�metro da consulta pelo preco informado
+				ps.setInt(4, valorPreco); // Substitui o quarto par�metro da 	consulta pelo preco informado
 				int totalRegistrosAfetados = ps.executeUpdate();
 				if (totalRegistrosAfetados == 0)
 					System.out.println("N�o foi realizada a exclusão!");
@@ -213,7 +214,7 @@ public class Livro {
 				return true;
 			} catch (SQLException erro) {
 				if (erro.getMessage().contains("foreign key constraint")) {
-	                System.out.println("Erro ao deletar dados do livro: Não é possível excluir o livro devido a restrições de chave estrangeira!");
+	                System.out.println("Erro ao deletar dados do livro: Não é possível excluir os dados devido a restrições de chave estrangeira!");
 	            } else {
 				System.out.println("Erro ao deletar dados do livro: " + erro.toString());
 	            }
@@ -224,3 +225,4 @@ public class Livro {
 		}
 	}
 }
+
